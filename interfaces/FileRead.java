@@ -1,5 +1,5 @@
 package interfaces;
 
 public interface FileRead {
-    public void Read();
+    public void fRead(String filePath);
 }
