@@ -16,7 +16,7 @@ public class Users {
         this.lastName = lastName;
     }
 
-    protected int getId() {
+    public int getId() {
         return id;
     }
 
