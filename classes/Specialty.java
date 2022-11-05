@@ -1,19 +1,19 @@
 package classes;
 
 public enum Specialty {
-    Anesthesiology,
-    Internal_diseases,
-    Gastroenterology,
-    Endocrinology,
-    Cardiology,
-    Dermatology,
-    Neurology,
-    Nephrology,
-    Psychiatry,
-    Rheumatology,
-    Gynecology,
-    Orthopedics,
-    Ophthalmology,
-    Urology,
-    Surgery
+    ANESTHESIOLOGY,
+    INTERNAL_DISEASES,
+    GASTROENTEROLOGY,
+    ENDOCRINOLOGY,
+    CARDIOLOGY,
+    DERMATOLOGY,
+    NEUROLOGY,
+    NEPHROLOGY,
+    PSYCHIATRY,
+    RHEUMATOLOGY,
+    GYNECOLOGY,
+    ORTHOPEDICS,
+    OPHTHALMOLOGY,
+    UROLOGY,
+    SURGERY
 }

@@ -1,8 +1,8 @@
 package classes;
 
 public enum Examinations {
-    initial,
-    secondary,
-    consultation,
-    procedure
+    INITIAL,
+    SECONDARY,
+    CONSULTATION,
+    PROCEDURE
 }
