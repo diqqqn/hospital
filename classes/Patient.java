@@ -6,16 +6,4 @@ public class Patient extends Users {
         super(id, firstName, listName);
     }
 
-    @Override
-    public void fRead(String filePath) {
-        // TODO Auto-generated method stub
-
-    }
-
-    @Override
-    public void fWrite() {
-        // TODO Auto-generated method stub
-
-    }
-
 }

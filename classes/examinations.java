@@ -1,6 +1,6 @@
 package classes;
 
-public enum examinations {
+public enum Examinations {
     initial,
     secondary,
     consultation,
