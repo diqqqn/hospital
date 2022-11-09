@@ -1,10 +1,6 @@
 package classes;
 
-// import java.io.File;
-// import java.io.PrintStream;
-// import java.util.Scanner;
-
-public class Users {
+public abstract class Users {
 
     private int id;
     private String firstName;
@@ -40,30 +36,4 @@ public class Users {
         this.lastName = lastName;
     }
 
-    // @Override
-    // public void fRead(String filePath) {
-    // try {
-    // File myFile = new File(filePath);
-    // Scanner myReader = new Scanner(myFile, "UTF-8");
-    // while (myReader.hasNextLine()) {
-    // String data = myReader.nextLine();
-    // System.out.println(data);
-    // }
-    // myReader.close();
-    // } catch (Exception e) {
-    // System.out.println("ERROR: " + e);
-    // }
-
-    // }
-
-    // @Override
-    // public void fWrite(String filePath, String str) {
-    // try {
-    // PrintStream fileWriter = new PrintStream(filePath);
-    // fileWriter.println(str);
-    // } catch (Exception e) {
-    // System.out.println("ERROR: " + e);
-    // }
-
-    // }
 }
