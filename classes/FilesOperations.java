@@ -9,13 +9,9 @@ public class FilesOperations implements interfaces.FileRead, interfaces.FileWrit
     @Override
     public void fWrite(String filePath, User users) {
         try {
-            File myFile = new File(filePath);
-            Scanner myReader = new Scanner(myFile, "UTF-8");
-            while (myReader.hasNextLine()) {
-                String data = myReader.nextLine();
-                System.out.println(data);
-            }
-            myReader.close();
+            PrintStream fileWriter = new PrintStream(filePath);
+            fileWriter.println(users.toString());
+            fileWriter.close();
         } catch (Exception e) {
             System.out.println("ERROR: " + e);
         }
@@ -23,12 +19,15 @@ public class FilesOperations implements interfaces.FileRead, interfaces.FileWrit
 
     @Override
     public void fRead(String filePath) {
-        String str = " ";
         try {
-            PrintStream fileWriter = new PrintStream(filePath);
-            fileWriter.println(str);
+            File myFile = new File(filePath);
+            Scanner myReader = new Scanner(myFile, "UTF-8");
 
-            fileWriter.close();
+            while (myReader.hasNextLine()) {
+                String data = myReader.nextLine();
+                System.out.println(data);
+            }
+            myReader.close();
         } catch (Exception e) {
             System.out.println("ERROR: " + e);
         }
