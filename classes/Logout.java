@@ -1,7 +1,5 @@
 package classes;
 
-import interfaces.Registratible;
-
 public class Logout implements interfaces.Logoutible {
 
     @Override

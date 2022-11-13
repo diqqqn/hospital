@@ -4,7 +4,7 @@ import java.io.File;
 import java.io.PrintStream;
 import java.util.Scanner;
 
-public class FilesOperations implements interfaces.FileRead, interfaces.FileWrite {
+public class FileOperations implements interfaces.FileRead, interfaces.FileWrite {
     public static int numberOfLine = 0;
 
     @Override
