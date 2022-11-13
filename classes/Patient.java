@@ -6,4 +6,8 @@ public class Patient extends User {
         super(id, firstName, listName);
     }
 
+    @Override
+    public String toString() {
+        return super.toString();
+    }
 }

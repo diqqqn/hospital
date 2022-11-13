@@ -36,4 +36,9 @@ public abstract class User {
         this.lastName = lastName;
     }
 
+    @Override
+    public String toString() {
+        return getId() + "," + getFirstName() + "," + getLastName();
+    }
+
 }
