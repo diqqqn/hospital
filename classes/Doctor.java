@@ -1,5 +1,7 @@
 package classes;
 
+import classes.enumclasess.Specialty;
+
 public class Doctor extends User {
     private Specialty specialty;
 

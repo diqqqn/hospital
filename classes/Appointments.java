@@ -1,5 +1,7 @@
 package classes;
 
+import classes.enumclasess.Examinations;
+
 public class Appointments extends User {
 
     private Examinations examinations;
