@@ -1,8 +1,8 @@
 package interfaces;
 
-import classes.Users;
+import classes.User;
 
 public interface Login {
 
-    public void UserLogin(Users user);
+    public void UserLogin(User user);
 }

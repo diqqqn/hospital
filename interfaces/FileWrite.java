@@ -1,7 +1,7 @@
 package interfaces;
 
-import classes.Users;
+import classes.User;
 
 public interface FileWrite {
-    public void fWrite(String filePath, Users users);
+    public void fWrite(String filePath, User users);
 }

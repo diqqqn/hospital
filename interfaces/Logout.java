@@ -1,8 +1,8 @@
 package interfaces;
 
-import classes.Users;
+import classes.User;
 
 public interface Logout {
 
-    public void UserLogout(Users user);
+    public void UserLogout(User user);
 }

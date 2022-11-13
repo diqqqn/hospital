@@ -1,6 +1,6 @@
 package classes;
 
-public class Doctor extends Users {
+public class Doctor extends User {
     Specialty specialty;
 
     public Doctor(int id, String firstName, String listName, Specialty specialty) {

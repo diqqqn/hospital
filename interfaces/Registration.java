@@ -1,8 +1,8 @@
 package interfaces;
 
-import classes.Users;
+import classes.User;
 
 public interface Registration {
 
-    public void RegistrationUser(Users users);
+    public void RegistrationUser(User users);
 }
