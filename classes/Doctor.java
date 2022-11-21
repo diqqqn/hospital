@@ -5,8 +5,8 @@ import classes.enumclasess.Specialty;
 public class Doctor extends User {
     private Specialty specialty;
 
-    public Doctor(int id, String firstName, String listName, Specialty specialty) {
-        super(id, firstName, listName);
+    public Doctor(String firstName, String listName, Specialty specialty) {
+        super(firstName, listName);
         this.specialty = specialty;
     }
 

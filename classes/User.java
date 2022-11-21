@@ -6,8 +6,7 @@ public abstract class User {
     private String firstName;
     private String lastName;
 
-    public User(int id, String firstName, String lastName) {
-        this.id = id;
+    public User(String firstName, String lastName) {
         this.firstName = firstName;
         this.lastName = lastName;
     }
@@ -38,7 +37,7 @@ public abstract class User {
 
     @Override
     public String toString() {
-        return getId() + "," + getFirstName() + "," + getLastName();
+        return getFirstName() + "," + getLastName();
     }
 
 }

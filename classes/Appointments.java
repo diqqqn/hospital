@@ -9,9 +9,9 @@ public class Appointments extends User {
     private String time;
     Doctor doctor;
 
-    public Appointments(int id, String patientId, String doctorId, Examinations examinations, String date,
+    public Appointments(String patientId, String doctorId, Examinations examinations, String date,
             String time, Doctor doctor) {
-        super(id, patientId, doctorId);
+        super(patientId, doctorId);
         this.examinations = examinations;
         this.date = date;
         this.time = time;
