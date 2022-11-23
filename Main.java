@@ -12,5 +12,6 @@ public class Main {
         Patient pt = new Patient("dd", "ii");
         doctorWriteInFile.fWrite("files/doctors.csv", dc);
         patientWriteInFile.fWrite("files/patients.csv", pt);
+        System.out.println("Testing if UnitTest branch works");
     }
 }
