@@ -4,16 +4,31 @@ import java.util.Scanner;
 
 public class Menu {
     public static void LogIn() {
+        Login login = new Login();
+
         Scanner sc = new Scanner(System.in);
-        int role = 0;
+        String choice;
         do {
-            System.out.println("Enter your role: ");
-            System.out.println("[1] Doctor: ");
-            System.out.println("[2] Patient: ");
-            role = sc.nextInt();
-        } while (role > 2 || role < 1);
-        sc.close();
-        System.out.println("exit");
+            try {
+                System.out.println("[1] Login");
+                System.out.println("[2] Registration");
+                System.out.println("[3] Exit");
+                System.out.print("[?]: ");
+                choice = sc.nextLine();
+
+                if (choice.equals("1")) {
+                    login.userLogin();
+                } else if (choice.equals("2")) {
+                    Registration rg = new Registration();
+                    rg.registrationUser();
+                } else if (choice.equals("3")) {
+                    System.exit(0);
+                }
+            } catch (Exception e) {
+                System.out.println("ERROR input");
+            }
+
+        } while (true);
 
     }
 }

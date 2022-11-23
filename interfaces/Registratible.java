@@ -4,5 +4,5 @@ import classes.User;
 
 public interface Registratible {
 
-    public void RegistrationUser(User users);
+    public void registrationUser();
 }

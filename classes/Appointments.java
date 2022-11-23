@@ -44,7 +44,7 @@ public class Appointments extends User {
 
     @Override
     public String toString() {
-        return super.toString() + "," + getExaminations() + "," + getDate() + "," + getTime() + ","
+        return super.toString() + "," + this.getExaminations() + "," + this.getDate() + "," + this.getTime() + ","
                 + this.doctor.getId();
     }
 
