@@ -50,7 +50,7 @@ public class Login implements interfaces.Loginable {
             System.out.println("WELCOME " + Login.globName);
             System.out.println("[1] Show my appointments");
             System.out.println("[2] Change date time appointments");
-            System.out.println("[3] canceling an appointment");
+            System.out.println("[3] Canceling an appointment");
             System.out.println("[4] Logout");
             System.out.print("[?]: ");
             choice = sc.nextInt();

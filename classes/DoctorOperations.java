@@ -12,7 +12,7 @@ public class DoctorOperations {
         String firstName;
         String lastName;
         Specialty specialty;
-
+        int x = -1;
         do {
             System.out.print("Enter your Firstname: ");
             firstName = sc.nextLine();
@@ -22,13 +22,14 @@ public class DoctorOperations {
                 System.out.println("[" + specialty2.ordinal() + "] - " + specialty2);
             }
             System.out.print("Enter your specialty: ");
-            int x = sc.nextInt();
+            x = sc.nextInt();
             specialty = Specialty.values()[x];
-        } while (firstName.length() < 3 || lastName.length() < 3);
+        } while (firstName.length() < 3 || lastName.length() < 3 || x > 14 || x < 0);
 
         final String pacintFile = "files/doctors.csv";
         Doctor doctor = new Doctor(firstName, lastName, specialty);
         fileOperations.fWrite(pacintFile, doctor);
+        System.out.println("REGISTRATION IS SUCCESSFUL");
     }
 
 }

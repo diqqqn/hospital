@@ -3,11 +3,11 @@ package classes;
 import java.util.Scanner;
 
 public class Menu {
-    public static void LogIn() {
+    public static void Show() {
         Login login = new Login();
-
         Scanner sc = new Scanner(System.in);
         String choice;
+
         do {
             try {
                 System.out.println("[1] Login");
