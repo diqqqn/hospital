@@ -7,15 +7,17 @@ public class Appointments extends User {
     private Examinations examinations;
     private String date;
     private String time;
-    Doctor doctor;
+    private String doctorId;
+    private String patinentId;
 
-    public Appointments(String patientId, String doctorId, Examinations examinations, String date,
-            String time, Doctor doctor) {
+    public Appointments(String patientId, Examinations examinations, String date,
+            String time, String doctorId) {
         super(patientId, doctorId);
+        this.patinentId = patientId;
         this.examinations = examinations;
         this.date = date;
         this.time = time;
-        this.doctor = doctor;
+        this.doctorId = doctorId;
     }
 
     public String getTime() {
@@ -24,6 +26,14 @@ public class Appointments extends User {
 
     public void setTime(String time) {
         this.time = time;
+    }
+
+    public String getPatinentId() {
+        return patinentId;
+    }
+
+    public void setPatinentId(String patinentId) {
+        this.patinentId = patinentId;
     }
 
     public String getDate() {
@@ -42,10 +52,18 @@ public class Appointments extends User {
         this.examinations = examinations;
     }
 
+    public String getDoctorId() {
+        return doctorId;
+    }
+
+    public void setDoctorId(String doctorId) {
+        this.doctorId = doctorId;
+    }
+
     @Override
     public String toString() {
-        return super.toString() + "," + this.getExaminations() + "," + this.getDate() + "," + this.getTime() + ","
-                + this.doctor.getId();
+        return this.getPatinentId() + "," + this.getExaminations() + "," + this.getDate() + "," + this.getTime() + ","
+                + this.getDoctorId();
     }
 
 }

@@ -8,7 +8,7 @@ import java.util.ArrayList;
 import java.util.Scanner;
 
 public class FileOperations implements interfaces.FileRead, interfaces.FileWrite {
-    private int numberOfLine = 1;
+    protected int numberOfLine = 1;
 
     @Override
     public void fWrite(String filePath, User users) {
@@ -26,6 +26,7 @@ public class FileOperations implements interfaces.FileRead, interfaces.FileWrite
 
     @Override
     public void fRead(String filePath, boolean printOnConsole) {
+        this.numberOfLine = 1;
         try {
             File myFile = new File(filePath);
             Scanner myReader = new Scanner(myFile, "UTF-8");
@@ -65,7 +66,7 @@ public class FileOperations implements interfaces.FileRead, interfaces.FileWrite
         return false;
     }
 
-    public void showFileDataById(String filePath, String id, boolean showNumbers) {
+    public void showFileDataById(String filePath, String id, boolean showNumbers, boolean IsDoctor) {
         try {
             int lineOfappointments = 1;
             File myFile = new File(filePath);
@@ -73,17 +74,37 @@ public class FileOperations implements interfaces.FileRead, interfaces.FileWrite
             while (myReader.hasNextLine()) {
                 String data = myReader.nextLine();
                 String[] arrUserDate = data.split(",");
-                if (arrUserDate[1].equals(id)) {
-                    String doctorName = getNameById(arrUserDate[5]);
-                    if (showNumbers) {
-                        System.out.println(
-                                "[" + Integer.toString(lineOfappointments) + "] -" + arrUserDate[2] + " "
-                                        + arrUserDate[3] + " "
-                                        + arrUserDate[4] + " " + doctorName);
-                        lineOfappointments++;
-                    } else {
-                        System.out.println(
-                                arrUserDate[2] + " " + arrUserDate[3] + " " + arrUserDate[4] + " " + doctorName);
+                if (IsDoctor) {
+                    if (arrUserDate[5].equals(id)) {
+                        String patientName = getNameById("files/patients.csv", arrUserDate[1]);
+                        if (showNumbers) {
+                            System.out.println(
+                                    "[" + Integer.toString(lineOfappointments) + "] -" + arrUserDate[2] + " "
+                                            + arrUserDate[3] + " "
+                                            + arrUserDate[4] + " [patient name-" + patientName + "]");
+                            lineOfappointments++;
+                        } else {
+                            System.out.println(
+                                    arrUserDate[2] + " " + arrUserDate[3] + " " + arrUserDate[4] + " [patient name-"
+                                            + patientName + "]");
+                        }
+                    }
+                } else {
+                    if (arrUserDate[1].equals(id)) {
+
+                        String doctorName = getNameById("files/doctors.csv", arrUserDate[5]);
+                        if (showNumbers) {
+                            System.out.println(
+                                    "[" + Integer.toString(lineOfappointments) + "] -" + arrUserDate[2] + " "
+                                            + arrUserDate[3] + " "
+                                            + arrUserDate[4] + " [doctor name-" + doctorName + "]");
+                            lineOfappointments++;
+                        } else {
+                            System.out.println(
+                                    arrUserDate[2] + " " + arrUserDate[3] + " " + arrUserDate[4] + " [doctor name-"
+                                            + doctorName + "]");
+                        }
+
                     }
                 }
             }
@@ -93,8 +114,7 @@ public class FileOperations implements interfaces.FileRead, interfaces.FileWrite
         }
     }
 
-    public String getNameById(String id) throws FileNotFoundException {
-        String filePath = "files/doctors.csv";
+    public String getNameById(String filePath, String id) throws FileNotFoundException {
         File myFile = new File(filePath);
         Scanner myReader = new Scanner(myFile, "UTF-8");
         String doctorName = "NONE";
@@ -126,7 +146,7 @@ public class FileOperations implements interfaces.FileRead, interfaces.FileWrite
 
                 if (arrUserDate[1].equals(id)) {
                     userDateTimeData.add(arrUserDate);
-                    String doctorName = getNameById(arrUserDate[5]);
+                    String doctorName = getNameById("files/doctors.csv", arrUserDate[5]);
                     System.out.println(
                             "[" + Integer.toString(lineOfAppointmentPat) + "] -" + arrUserDate[2] + " "
                                     + arrUserDate[3] + " "
@@ -145,7 +165,7 @@ public class FileOperations implements interfaces.FileRead, interfaces.FileWrite
         if (!delete) {
 
             do {
-                System.out.print("[!] Choice for change: ");
+                System.out.print("[!] Choice for change date and time: ");
                 choiceDateTime = sc.nextInt();
             } while (choiceDateTime > lineOfAppointmentPat - 1 || choiceDateTime < 1);
 
@@ -170,7 +190,7 @@ public class FileOperations implements interfaces.FileRead, interfaces.FileWrite
         } else {
 
             do {
-                System.out.print("[!] Choice for cancel: ");
+                System.out.print("[!] for cancel appointments: ");
                 choiceDateTime = sc.nextInt();
             } while (choiceDateTime > lineOfAppointmentPat - 1 || choiceDateTime < 1);
 

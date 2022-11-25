@@ -8,7 +8,7 @@ public class PatientOperations {
     private final String filePath = "files/appointments.csv";
 
     public void showMyAppointments(String id) {
-        fileOperations.showFileDataById(filePath, id, false);
+        fileOperations.showFileDataById(filePath, id, false, false);
     }
 
     public void RegistationPatient() {
