@@ -8,7 +8,7 @@ public class PatientOperations {
     private final String filePath = "files/appointments.csv";
 
     public void showMyAppointments(String id) {
-        fileOperations.showFileDataById(filePath, id);
+        fileOperations.showFileDataById(filePath, id, false);
     }
 
     public void RegistationPatient() {
@@ -29,6 +29,14 @@ public class PatientOperations {
         final String pacintFile = "files/patients.csv";
         Patient patient = new Patient(firstName, lastName, age);
         fileOperations.fWrite(pacintFile, patient);
+    }
+
+    public void changeDateTimeAppointments() {
+        fileOperations.changeDateTimeOnPatientInAppointments(Login.globId, false);
+    }
+
+    public void removeDateTimeAppointments() {
+        fileOperations.changeDateTimeOnPatientInAppointments(Login.globId, true);
     }
 
 }

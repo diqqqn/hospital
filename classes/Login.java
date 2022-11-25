@@ -60,8 +60,12 @@ public class Login implements interfaces.Loginable {
                 this.patientLog();
                 break;
             case 2:
+                patientOperations.changeDateTimeAppointments();
+                this.patientLog();
                 break;
             case 3:
+                patientOperations.removeDateTimeAppointments();
+                this.patientLog();
                 break;
             case 4:
                 break;
