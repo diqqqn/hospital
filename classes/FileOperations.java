@@ -6,6 +6,7 @@ import java.io.FileOutputStream;
 import java.io.PrintStream;
 import java.util.ArrayList;
 import java.util.Scanner;
+import classes.enumclasess.Examinations;
 
 public class FileOperations implements interfaces.FileRead, interfaces.FileWrite {
     protected int numberOfLine = 1;
@@ -237,6 +238,38 @@ public class FileOperations implements interfaces.FileRead, interfaces.FileWrite
             System.out.println("ERROR: " + e);
         }
 
+    }
+
+    public void addAppointmentsInFile(String doctorId) {
+        Scanner sc = new Scanner(System.in);
+        int patientId;
+
+        this.fRead("files/patients.csv", true);
+        do {
+            System.out.print("Choice patient :");
+            patientId = sc.nextInt();
+        } while (patientId >= this.numberOfLine);
+
+        int examination;
+        Examinations examinations;
+        do {
+
+            for (Examinations examinations2 : Examinations.values()) {
+                System.out.println("[" + examinations2.ordinal() + "] - " + examinations2);
+            }
+            System.out.print("Choice examinations: ");
+            examination = sc.nextInt();
+            examinations = Examinations.values()[examination];
+        } while (examination > 3 || examination < 0);
+
+        Scanner datetime = new Scanner(System.in);
+        System.out.print("Enter date in format dd-mm-yyyy: ");
+        String date = datetime.nextLine();
+        System.out.print("Enter time in format hhmm: ");
+        String time = datetime.nextLine();
+        Appointments appointments = new Appointments(Integer.toString(patientId), examinations, date, time, doctorId);
+        String appointFilePath = "files/appointments.csv";
+        this.fWrite(appointFilePath, appointments);
     }
 
 }
