@@ -1,13 +1,17 @@
 package unitTests;
 
+import classes.Doctor;
+import classes.Menu;
+import classes.Patient;
 import classes.User;
+import classes.enumclasess.Specialty;
 import org.junit.jupiter.api.Test;
 
 public class InputTests {
 
     @Test
-    void isLogInCorrect() {
-        User testUser= new User("testName","testLastName") {
+    void isUserLogInCorrect() {
+        User testUser = new User("testName", "testLastName") {
             @Override
             public int getId() {
                 return super.getId();
@@ -43,5 +47,20 @@ public class InputTests {
                 return super.toString();
             }
         };
+    }
+    @Test
+    void isDoctorLogInCorrect() {
+        Doctor testDoctor = new Doctor("doctorFirstName", "doctorLastName", Specialty.NEUROLOGY);
+
+        }
+
+    @Test
+    void isPatientLogInCorrect() {
+        Patient testPatient=new Patient("patientName", "patientLstName", "100");
+
+    }
+    @Test
+    void isMenuStarting() {
+        Menu.Show();
     }
 }
