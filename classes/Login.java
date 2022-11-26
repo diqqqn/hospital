@@ -82,7 +82,7 @@ public class Login implements interfaces.Loginable {
         do {
             System.out.println("WELCOME dr." + Login.globName);
             System.out.println("[1] Show my patient hours");
-            System.out.println("[2] Sorting By");
+            System.out.println("[2] New appointment");
             System.out.println("[3] Logout");
             System.out.print("[?]: ");
             choice = sc.nextInt();
@@ -90,8 +90,12 @@ public class Login implements interfaces.Loginable {
 
         switch (choice) {
             case 1:
+                doctorOperations.showMyPatintHours(globId);
+                this.doctorLog();
                 break;
             case 2:
+                doctorOperations.addAppointments(globId);
+                this.doctorLog();
                 break;
             case 3:
                 break;

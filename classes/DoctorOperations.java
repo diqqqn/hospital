@@ -1,7 +1,6 @@
 package classes;
 
 import java.util.Scanner;
-
 import classes.enumclasess.Specialty;
 
 public class DoctorOperations {
@@ -30,6 +29,15 @@ public class DoctorOperations {
         Doctor doctor = new Doctor(firstName, lastName, specialty);
         fileOperations.fWrite(pacintFile, doctor);
         System.out.println("REGISTRATION IS SUCCESSFUL");
+    }
+
+    public void showMyPatintHours(String id) {
+        String filePath = "files/appointments.csv";
+        fileOperations.showFileDataById(filePath, id, false, true);
+    }
+
+    public void addAppointments(String doctorId) {
+        fileOperations.addAppointmentsInFile(doctorId);
     }
 
 }

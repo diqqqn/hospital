@@ -19,8 +19,8 @@ public class Menu {
                 if (choice.equals("1")) {
                     login.userLogin();
                 } else if (choice.equals("2")) {
-                    Registration rg = new Registration();
-                    rg.registrationUser();
+                    Registration registration = new Registration();
+                    registration.registrationUser();
                 } else if (choice.equals("3")) {
                     System.exit(0);
                 }
