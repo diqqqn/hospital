@@ -1,7 +1,10 @@
 package unitTests;
 
+import classes.User;
 import org.junit.jupiter.api.Test;
 import java.io.File;
+import java.io.FileOutputStream;
+import java.io.PrintStream;
 import java.util.Scanner;
 
 public class FileOperationsTests {
@@ -22,6 +25,19 @@ public class FileOperationsTests {
                 this.numberOfLine++;
             }
             testReader.close();
+        } catch (Exception e) {
+            System.out.println("ERROR: " + e);
+        }
+    }
+    @Test
+    public void testFileWrite(String filePath, User testUser) {
+        testFileRead(filePath, false);
+        testUser.setId(numberOfLine);
+        try {
+            PrintStream fileWriter = new PrintStream(new FileOutputStream(filePath, true));
+            String userData = testUser.toString();
+            fileWriter.println(testUser.getId() + "," + userData);
+            fileWriter.close();
         } catch (Exception e) {
             System.out.println("ERROR: " + e);
         }
